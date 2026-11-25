@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: unitask
+  datasource:
+    url: ${UNITASK_DB_URL:jdbc:mysql://127.0.0.1:3307/unitask?connectionTimeZone=UTC&forceConnectionTimeZoneToSession=true&characterEncoding=UTF-8}
+    username: ${UNITASK_DB_USER:unitask}
+    password: ${UNITASK_DB_PASSWORD}
+  sql:
+    init:
+      mode: never # Explicit initial schema / migration; no destructive startup DDL.
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 220MB
+      file-size-threshold: 0B
+  data:
+    redis:
+      host: ${UNITASK_REDIS_HOST:127.0.0.1}
+      port: ${UNITASK_REDIS_PORT:6380}
+      password: ${UNITASK_REDIS_PASSWORD:}
+      timeout: 500ms
+      connect-timeout: 500ms
+  jackson:
+    time-zone: UTC
+server:
+  address: ${UNITASK_BIND_ADDRESS:127.0.0.1}
+  port: ${UNITASK_PORT:8080}
+  servlet:
+    session:
+      timeout: 30m
+      cookie:
+        http-only: true
+        same-site: lax
+  error:
+    include-message: never
+    include-stacktrace: never
+unitask:
+  files:
+    root: ${UNITASK_UPLOAD_DIR:./var/uploads}
+    max-files: 10
+    max-batch-bytes: 209715200
+    max-project-bytes: 2147483648
+  timezone: Asia/Shanghai
+  notification:
+    unread-cache-ttl-seconds: 60
+    reminder-interval-seconds: 300

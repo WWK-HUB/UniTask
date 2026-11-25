@@ -1,0 +1,18 @@
+/target/
+/var/
+/infra/.env
+.env
+*.log
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
+# Local coursework, acceptance artifacts and development package
+/AGENTS.md
+/CODEX_START.md
+/templates/
+/tests/
+/docs/*
+!/docs/SELF_HOSTING.md
+/.netlify/
