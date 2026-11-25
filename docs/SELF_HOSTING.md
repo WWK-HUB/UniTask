@@ -28,7 +28,7 @@
 4. 运行 `.\scripts\share.ps1 -Stop` 关闭共享入口。此操作保留数据卷和附件。再次启动会沿用数据，Quick Tunnel 域名会改变。
 5. 如需轮换注册口令，先关闭入口，更新本机口令文件，再启动脚本。组员已注册的密码和项目权限继续生效。
 
-分享启用 Secure Session Cookie，单文件和批次 90 MiB；本机默认仍为单文件 100 MiB 和批次 200 MiB。电脑关机、休眠、Docker 关闭或隧道进程结束时，外部入口会中断。多人长期稳定访问可在有持久磁盘的主机上部署同一个 WAR 和 MySQL/Redis，并配置固定域名与 HTTPS。[Quick Tunnel 限制](https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/)
+分享启用 Secure Session Cookie，Tomcat 从本机隧道代理读取 HTTPS 协议和 Cloudflare 客户端地址。单文件和批次 90 MiB；本机默认仍为单文件 100 MiB 和批次 200 MiB。电脑关机、休眠、Docker 关闭或隧道进程结束时，外部入口会中断。多人长期稳定访问可在有持久磁盘的主机上部署同一个 WAR 和 MySQL/Redis，并配置固定域名与 HTTPS。[Quick Tunnel 限制](https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/)
 
 ## 数据与备份
 

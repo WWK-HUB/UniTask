@@ -5,8 +5,16 @@ spring:
       max-file-size: 90MB
       max-request-size: 94MB
 server:
+  forward-headers-strategy: native
   tomcat:
     max-swallow-size: 94MB
+    use-relative-redirects: true
+    remoteip:
+      internal-proxies: '127\.0\.0\.1|::1|0:0:0:0:0:0:0:1'
+      host-header: ""
+      port-header: ""
+      remote-ip-header: CF-Connecting-IP
+      protocol-header: X-Forwarded-Proto
   servlet:
     session:
       cookie:
