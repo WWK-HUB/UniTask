@@ -4,7 +4,7 @@ UniTask 面向需要共同完成课程、小组实践和团队项目的成员。
 
 ## 在线访问
 
-[打开 UniTask](https://satisfy-transmit-examinations-languages.trycloudflare.com/login)
+[打开 UniTask](https://adelaide-named-champion-properties.trycloudflare.com/login)
 
 当前入口由 Cloudflare Quick Tunnel 提供，应用、MySQL 和附件保存在本机。需要主机保持开机联网，以及应用、数据库和隧道持续运行。隧道重建后地址会变化，已有项目和文件会保留。注册需要向组织者索取口令。
 
